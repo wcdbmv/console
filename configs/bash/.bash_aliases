@@ -1,0 +1,1 @@
+alias cls='printf "\ec"'
