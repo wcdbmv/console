@@ -7,6 +7,10 @@ set encoding=utf-8
 set nocompatible
 
 if empty(glob('~/.vim/autoload/plug.vim'))
+	if (empty(system('which curl')))
+		echom "Need to install curl"
+		q
+	endif
 	silent! curl -fLo ~/.vim/autoload/plug.vim --create-dirs
 	      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
